@@ -61,6 +61,11 @@ teamcity {
             downloadUrl = 'https://github.com/etiennestuder/teamcity-build-scan-plugin'
             useSeparateClassloader = true
         }
+
+        publish {
+            token = findProperty('jetbrains.token') // or credentials.JETBRAINS_TOKEN
+            notes = findProperty('change.notes')
+        }
     }
 
     environments {
